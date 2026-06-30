@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>N'Charm Store</title>
+  <link rel="stylesheet" href="style (4).css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Toko N'Charm</div>
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#produk">Produk</a>
+    <a href="#kategori">Kategori</a>
+    <a href="#footer">Kontak</a>
+  </nav>
+  <button class="cart-btn">🛒 Keranjang (<span id="cart-count">0</span>)</button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="beranda">
+  <img src="poto logo.jpeg" alt="N'Charm Banner" class="hero-img" />
+  <h1>Hallo Sobat N'Charm!!! 🌸<br>Selamat Datang Di Toko Online Kami</h1>
+  <p>Temukan Keycharm & Strap Handphone Tergemas Kamu 💖</p>
+  <a href="#produk" class="btn-hero">Belanja Sekarang</a>
+</section>
+
+<!-- Search Bar -->
+  <div class="search-bar" role="search">
+   <input
+      type="text"
+      id="searchInput"
+      class="search-bar__input"
+      placeholder="Cari aksesoris impianmu…"
+      aria-label="Cari produk"
+        />
+      <button class="search-bar__btn" id="searchBtn" aria-label="Cari">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+  </div>
+
+<!-- KATEGORI -->
+<section class="kategori-section" id="kategori">
+  <h2>Kategori 🎀</h2>
+  <div class="kategori-list">
+    <div class="kat-card" onclick="filterProduct('semua', this)">
+      <span>🛍️</span><p>Semua Produk</p>
+    </div>
+    <div class="kat-card" onclick="filterProduct('keycharm', this)">
+      <span>🔑</span><p>Keycharm</p>
+    </div>
+    <div class="kat-card" onclick="filterProduct('strap-handphone', this)">
+      <span>📱</span><p>Strap Handphone</p>
+    </div>
+    <div class="kat-card" onclick="filterProduct('resin-keycharm', this)">
+      <span>✨</span><p>Resin Keycharm</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUK -->
+<section id="produk">
+  <h2>PRODUCT 🌷</h2>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterProduct('semua', this)">Semua</button>
+    <button class="filter-btn" onclick="filterProduct('keycharm', this)">Keycharm</button>
+    <button class="filter-btn" onclick="filterProduct('strap-handphone', this)">Strap Handphone</button>
+    <button class="filter-btn" onclick="filterProduct('resin-keycharm', this)">Resin Keycharm</button>
+  </div>
+
+  <div class="produk-grid">
+
+    <!-- PRODUK 1 -->
+    <div class="produk-card" data-cat="keycharm">
+      <div class="card-img-wrap">
+        <img src="poto1.jpeg" alt="Keycharm Bloom" />
+        <span class="badge badge-popular">Terlaris</span>
+        <span class="cat-tag">Keycharm</span>
+      </div>
+      <div class="info">
+        <div class="nama">Keycharm Bloom 🌸</div>
+        <div class="deskripsi">Gantungan kunci berbentuk bunga cantik dengan tambahan lonceng mini berwarna (biru, cokelat, hitam, putih). Minimalis namun tetap berkilau!</div>
+        <div class="rating">★★★★★ 4.9 (128)</div>
+        <div class="harga-row">
+          <div class="harga">Rp 20.000</div>
+          <button onclick="addCart('Keycharm Bloom')">+ Keranjang</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUK 2 -->
+    <div class="produk-card" data-cat="keycharm">
+      <div class="card-img-wrap">
+        <img src="poto2.jpeg" alt="Keycharm Colorful" />
+        <span class="badge badge-new">Baru</span>
+        <span class="cat-tag">Keycharm</span>
+      </div>
+      <div class="info">
+        <div class="nama">Keycharm Colorful 🌈</div>
+        <div class="deskripsi">Gantungan kunci bentuk balon doggie yang lucu dalam warna pastel (biru, pink, kuning, hitam). Dilengkapi lonceng gemas dan rantai kristal bintang untuk mempercantik tas atau kuncimu!</div>
+        <div class="rating">★★★★★ 4.8 (97)</div>
+        <div class="harga-row">
+          <div class="harga">Rp 25.000</div>
+          <button onclick="addCart('Keycharm Colorful')">+ Keranjang</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUK 3 -->
+    <div class="produk-card" data-cat="keycharm">
+      <div class="card-img-wrap">
+        <img src="poto3.jpeg" alt="Keycharm Dangle" />
+        <span class="badge badge-sale">Diskon</span>
+        <span class="cat-tag">Keycharm</span>
+      </div>
+      <div class="info">
+        <div class="nama">Keycharm Dangle 🎀</div>
+        <div class="deskripsi">Gantungan kunci dangle dengan ornamen pompom dan disertai lonceng yang berantai lucu. Setiap gerakan menghasilkan kilauan yang cantik dan menggemaskan.</div>
+        <div class="rating">★★★★☆ 4.7 (64)</div>
+        <div class="harga-row">
+          <div>
+            <div class="harga-old">Rp 20.000</div>
+            <div class="harga">Rp 18.000</div>
+          </div>
+          <button onclick="addCart('Keycharm Dangle')">+ Keranjang</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUK 4 -->
+    <div class="produk-card" data-cat="keycharm">
+      <div class="card-img-wrap">
+        <img src="poto4.jpeg" alt="Keycharm Trinket" />
+        <span class="badge badge-new">Baru</span>
+        <span class="cat-tag">Keycharm</span>
+      </div>
+      <div class="info">
+        <div class="nama">Keycharm Trinket 🔮</div>
+        <div class="deskripsi">Gantungan kunci trinket mewah dengan sentuhan feminin yang anggun! Menampilkan liontin hati bertuliskan 'Mezzo Piano', pita kristal berkilau, dan lonceng senada. Cocok untuk gaya yang elegan dan cocok sebagai hadiah spesial.</div>
+        <div class="rating">★★★★★ 4.9 (55)</div>
+        <div class="harga-row">
+          <div class="harga">Rp 15.000</div>
+          <button onclick="addCart('Keycharm Trinket')">+ Keranjang</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUK 5 -->
+    <div class="produk-card" data-cat="strap-handphone">
+      <div class="card-img-wrap">
+        <img src="poto5.jpeg" alt="Strap Handphone Bunga Sakura" />
+        <span class="badge badge-popular">Terlaris</span>
+        <span class="cat-tag">Strap Handphone</span>
+      </div>
+      <div class="info">
+        <div class="nama">Strap Dreamy Cloud ☁️</div>
+        <div class="deskripsi">Tali strap handphone dengan gaya yang super cute! Tali pergelangan tangan berbahan rajut lembut warna pastel ini dilengkapi liontin awan dan bintang yang menggemaskan, plus detail aksen smiley. Bikin tampilan HP-mu makin ceria setiap hari!</div>
+        <div class="rating">★★★★★ 5.0 (210)</div>
+        <div class="harga-row">
+          <div>
+            <div class="harga-old">Rp 27.000</div>
+            <div class="harga">Rp 25.000</div>
+          </div>
+          <button onclick="addCart('Strap Bunga Sakura')">+ Keranjang</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUK 6 -->
+    <div class="produk-card" data-cat="strap-handphone">
+      <div class="card-img-wrap">
+        <img src="poto6.jpeg" alt="Strap Rainbow Braided" />
+        <span class="badge badge-new">Baru</span>
+        <span class="cat-tag">Strap Handphone</span>
+      </div>
+      <div class="info">
+        <div class="nama">Strap Honu Turtle 🐢</div>
+        <div class="deskripsi">Tali Strap Handphone dengan bahan tali Giok premium yang Kuat, tidak mudah putus. Yang di kombinasi mewah nan anggun dari rangkaian manik-manik mutiara, kristal bunga, dan pita satin pastel yang lembut. Multifungsi, bisa untuk gantungan kunci maupun gantungan HP estetik!</div>
+        <div class="rating">★★★★★ 4.8 (88)</div>
+        <div class="harga-row">
+          <div class="harga">Rp 30.000</div>
+          <button onclick="addCart('Strap Rainbow Braided')">+ Keranjang</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUK 7 -->
+    <div class="produk-card" data-cat="strap-handphone">
+      <div class="card-img-wrap">
+        <img src="poto7.jpeg" alt="Strap Teddy Bear" />
+        <span class="badge badge-sale">Diskon</span>
+        <span class="cat-tag">Strap Handphone</span>
+      </div>
+      <div class="info">
+        <div class="nama">Strap Teddy Bear 🐻</div>
+        <div class="deskripsi">Tali strap denim biru dengan liontin beruang mini yang lucu. Gaya kasual yang cocok dipakai sehari-hari ke kampus maupun jalan-jalan.</div>
+        <div class="rating">★★★★☆ 4.7 (73)</div>
+        <div class="harga-row">
+          <div>
+            <div class="harga-old">Rp 38.000</div>
+            <div class="harga">Rp 30.000</div>
+          </div>
+          <button onclick="addCart('Strap Teddy Bear')">+ Keranjang</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUK 8 -->
+    <div class="produk-card" data-cat="resin-keycharm">
+      <div class="card-img-wrap">
+        <img src="poto8.jpeg" alt="Resin Keycharm Ocean Wave" />
+        <span class="badge badge-popular">Terlaris</span>
+        <span class="cat-tag">Resin Keycharm</span>
+      </div>
+      <div class="info">
+        <div class="nama">Resin Keycharm Ocean Wave 🌊</div>
+        <div class="deskripsi">Gantungan kunci resin handmade motif ombak laut biru transparan dengan serpihan emas dan kerang kecil. Setiap buah dibuat unik!</div>
+        <div class="rating">★★★★★ 5.0 (312)</div>
+        <div class="harga-row">
+          <div class="harga">Rp 45.000</div>
+          <button onclick="addCart('Resin Keycharm Ocean Wave')">+ Keranjang</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUK 9 -->
+    <div class="produk-card" data-cat="resin-keycharm">
+      <div class="card-img-wrap">
+        <img src="poto9.jpeg" alt="Resin Keycharm Dried Flower" />
+        <span class="badge badge-new">Baru</span>
+        <span class="cat-tag">Resin Keycharm</span>
+      </div>
+      <div class="info">
+        <div class="nama">Resin Keycharm Dried Flower 🌷</div>
+        <div class="deskripsi">Bunga asli yang dikeringkan lalu dipreservasi dalam resin bening berkualitas tinggi. Cantik abadi, setiap buah unik dan berbeda.</div>
+        <div class="rating">★★★★★ 4.9 (176)</div>
+        <div class="harga-row">
+          <div>
+            <div class="harga-old">Rp 55.000</div>
+            <div class="harga">Rp 42.000</div>
+          </div>
+          <button onclick="addCart('Resin Keycharm Dried Flower')">+ Keranjang</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUK 10 -->
+    <div class="produk-card" data-cat="resin-keycharm">
+      <div class="card-img-wrap">
+        <img src="poto10.jpeg" alt="Resin Keycharm Strawberry" />
+        <span class="badge badge-popular">Favorit</span>
+        <span class="cat-tag">Resin Keycharm</span>
+      </div>
+      <div class="info">
+        <div class="nama">Resin Keycharm Strawberry 🍓</div>
+        <div class="deskripsi">Gantungan kunci resin berbentuk stroberi merah muda dengan glitter berkilau. Tampak manis, menggemaskan, dan tahan lama.</div>
+        <div class="rating">★★★★★ 4.8 (95)</div>
+        <div class="harga-row">
+          <div class="harga">Rp 38.000</div>
+          <button onclick="addCart('Resin Keycharm Strawberry')">+ Keranjang</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <p><strong>Toko N'Charm</strong></p>
+  <p>Jl. Cibolerang No.105, Bandung, Jawa Barat</p>
+  <p>Email: hello@ncharm.id &nbsp;|&nbsp; Telp: 0819-1827-2127</p>
+  <p>Instagram: @ncharm.store</p>
+  <p>&copy; 2026 Toko N'Charm. All rights reserved.</p>
+</footer>
+
+<script>
+  let cartCount = 0;
+
+  function addCart(name) {
+    cartCount++;
+    document.getElementById('cart-count').textContent = cartCount;
+    const toast = document.getElementById('toast');
+    toast.textContent = '✓ ' + name + ' ditambahkan ke keranjang!';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  function filterProduct(cat, el) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    if (el.classList.contains('filter-btn')) el.classList.add('active');
+    document.querySelectorAll('.produk-card').forEach(card => {
+      card.style.display = (cat === 'semua' || card.dataset.cat === cat) ? 'flex' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
